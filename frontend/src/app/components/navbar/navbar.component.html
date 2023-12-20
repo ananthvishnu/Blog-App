@@ -15,6 +15,8 @@
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
                 <li *ngIf="authService.CurrentUserSig() === null" class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" [routerLink]="['login']" style="cursor: pointer;">Login</a></li>
                 <li *ngIf="authService.CurrentUserSig()" class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" (click)="logout()" style="cursor: pointer;">Logout</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4">{{authService.CurrentUserSig()?.username}}</a></li>
+
             </ul>
         </div>
     </div>
