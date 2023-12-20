@@ -1,0 +1,270 @@
+<app-navbar></app-navbar>
+<div class="bg-light py-3 py-md-5 py-xl-8">
+  <div class="container animate__animated animate__zoomIn animate__slow">
+    <div class="row justify-content-md-center">
+      <div class="col-12 col-md-11 col-lg-8 col-xl-7 col-xxl-6">
+        <div class="bg-white p-4 p-md-5 rounded shadow-sm">
+          <div class="row">
+            <div class="col-12">
+              <div class="text-center mb-5">
+                <a routerLink="['/home']">
+                  <!-- <img src="../../../favicon.ico" alt="" width="175" height="57"> -->
+                  <h1 class="text-primary fw-bold mb-0">
+                    Clean<span class="text-dark">Blog</span>
+                  </h1>
+                </a>
+              </div>
+            </div>
+          </div>
+          <form
+            action="javascript:void(0)"
+            [formGroup]="signupForm"
+            (ngSubmit)="signup()"
+          >
+            <div class="row gy-3 gy-md-4 overflow-hidden">
+              <div class="col-12">
+                <label for="email" class="form-label open"
+                  >Username<span class="text-danger">*</span></label
+                >
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-envelope"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8ZM7.373 11.49c-.225.146-.48.226-.773.226-.793 0-1.435-.642-1.435-1.434 0-.41.167-.781.435-1.05-1.063-.343-2.272-.99-2.272-2.97 0-1.66 1.13-2.456 2.648-2.81.197-.036.43.038.546.192.115.154.14.34.067.516-.047.14-.133.332-.26.538-.39.66-.91 1.494-.91 2.778 0 2.653 2.184 3.806 4.866 4.238.647.106 1.07.142 1.474-.013.267-.095.503-.258.697-.482.083.248.128.523.128.805 0 .462-.153.902-.43 1.276a1.824 1.824 0 0 1-1.287.664c-1.05 0-2.112-.774-2.112-2.265 0-1.375.854-2.594 2.203-3.11Z"
+                      />
+                    </svg>
+                  </span>
+                  <input
+                    type="text"
+                    class="custom-outline form-control"
+                    name="username"
+                    id="username"
+                    formControlName="username"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="input-div" style="margin: 0">
+                <span
+                  *ngIf="submitted && f['username'].errors"
+                  class="validation-error"
+                >
+                  <span
+                    class="validation-error"
+                    *ngIf="f['username'].errors['required']"
+                  >
+                    Username is required!
+                  </span>
+                </span>
+              </div>
+              <div class="col-12">
+                <label for="email" class="form-label open"
+                  >Email <span class="text-danger">*</span></label
+                >
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-envelope"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"
+                      />
+                    </svg>
+                  </span>
+                  <input
+                    type="email"
+                    class="custom-outline form-control"
+                    name="email"
+                    id="email"
+                    formControlName="email"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="input-div" style="margin: 0">
+                <span
+                  *ngIf="submitted && f['email'].errors"
+                  class="validation-error"
+                >
+                  <span
+                    class="validation-error"
+                    *ngIf="f['email'].errors['required']"
+                  >
+                    Email is required!
+                  </span>
+                  <span
+                    class="validation-error"
+                    *ngIf="f['email'].errors['email']"
+                  >
+                    Enter valid email!
+                  </span>
+                </span>
+              </div>
+              <div class="col-12">
+                <label for="password" class="form-label open"
+                  >Password <span class="text-danger">*</span></label
+                >
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-key"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z"
+                      />
+                      <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                    </svg>
+                  </span>
+                  <input
+                  [type]="changetype ? 'password' : 'text'"
+                  class="custom-outline form-control"
+                    name="password"
+                    id="password"
+                    value=""
+                    formControlName="password"
+                    required
+                  />
+                  <span class="eye" style="cursor: pointer;" (click)="viewpass()"
+                  ><i
+                    [ngClass]="visible ? 'bi bi-eye-fill' : 'bi bi-eye-slash-fill '"
+                  ></i>
+                </span>
+                </div>
+              </div>
+              <div class="input-div" style="margin: 0">
+                <span
+                  *ngIf="submitted && f['password'].errors"
+                  class="validation-error"
+                >
+                  <span
+                    class="validation-error"
+                    *ngIf="f['password'].errors['required']"
+                  >
+                    Password is required!
+                  </span>
+                </span>
+              </div>
+
+              <div class="col-12">
+                <label for="password" class="form-label open"
+                  >Confirm Password <span class="text-danger">*</span></label
+                >
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-key"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z"
+                      />
+                      <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                    </svg>
+                  </span>
+                  <input
+                  [type]="changetype1 ? 'password' : 'text'"
+                    class="custom-outline form-control"
+                    name="confirmPassword"
+                    id="confirmPassword"
+                    value=""
+                    formControlName="confirmPassword"
+                    required
+                  />
+                  <span class="eye" style="cursor: pointer;" (click)="viewpass1()"
+                  ><i
+                    [ngClass]="visible1 ? 'bi bi-eye-fill' : 'bi bi-eye-slash-fill '"
+                  ></i>
+                </span>
+                </div>
+              </div>
+
+              <div class="input-div" style="margin: 0">
+                <span
+                  *ngIf="submitted && f['confirmPassword'].errors"
+                  class="validation-error"
+                >
+                  <span
+                    *ngIf="f['confirmPassword'].errors['required']"
+                    class="validation-error"
+                  >
+                    Please fill out this field
+                  </span>
+                  <span
+                    *ngIf="f['confirmPassword'].errors['matching']"
+                    class="validation-error"
+                  >
+                    Confirm Password does not match
+                  </span>
+                </span>
+              </div>
+
+              <div class="col-12">
+                <div class="d-grid">
+                  <button
+                    *ngIf="!isLoading"
+                    class="btn btn-primary btn-lg text-dark open"
+                    type="submit"
+                  >
+                    Signup
+                  </button>
+                  <button
+                    *ngIf="isLoading"
+                    class="btn btn-primary btn-lg text-dark"
+                    type="submit"
+                  >
+                    <div
+                      class="spinner-border text-light"
+                      role="status"
+                      style="height: 20px; width: 20px"
+                    >
+                      <span class="sr-only">Loading...</span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="row">
+            <div class="col-12">
+              <hr class="mt-5 mb-4 border-secondary-subtle" />
+              <div
+                class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center"
+              >
+                <a
+                  [routerLink]="['/login']"
+                  class="link-secondary text-decoration-none open"
+                  >Already have account :  <span class="login-text open">Login</span> </a
+                >
+                <a href="#!" class="link-secondary text-decoration-none open"
+                  >Forgot password</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
