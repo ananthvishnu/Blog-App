@@ -19,6 +19,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { CreateBlogComponent } from './models/create-blog/create-blog.component';
 import { DeleteBlogComponent } from './models/delete-blog/delete-blog.component';
+import { authInterceptor } from './interceptor/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,9 @@ import { DeleteBlogComponent } from './models/delete-blog/delete-blog.component'
     MatDialogModule
 
   ],
-  providers: [],
+  providers: [
+    provideHttpClient(withInterceptors([authInterceptor]))
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

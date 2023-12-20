@@ -10,6 +10,7 @@ import {
 import { Router } from '@angular/router';
 import { HttpServiceService } from 'src/app/database/http.service.service';
 import { NgToastService } from 'ng-angular-popup';
+import { AuthServiceService } from 'src/app/shared/auth-service.service';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +29,9 @@ export class LoginComponent implements OnInit {
     private http: HttpClient,
     private router: Router,
     private apiService: HttpServiceService,
-    private toaster: NgToastService
+    private toaster: NgToastService,
+    private authService: AuthServiceService,
+
   ) {}
 
   ngOnInit(): void {
@@ -61,6 +64,8 @@ export class LoginComponent implements OnInit {
 
       this.apiService.post('/api/auth/login', data).subscribe(
         (response: any) => {
+          console.log(response.user);
+          
           this.toaster.success({
             detail: 'SUCCESS',
             summary: 'Login successfully',
@@ -69,8 +74,9 @@ export class LoginComponent implements OnInit {
           });
           this.isLoading = false;
           this.submitted = false;
-          // localStorage.setItem('token', response.user.token);
-          // this.authService.CurrentUserSig.set(response.user);
+          localStorage.setItem('token', response.token);
+          localStorage.setItem('id', response.user.id);
+          this.authService.CurrentUserSig.set(response.user);
           this.router.navigateByUrl('');
         },
         (error: any) => {

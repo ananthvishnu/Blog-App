@@ -26,7 +26,9 @@ export class HttpServiceService {
     const headers = { 'content-type': 'application/json' };
     return this._http.put(this.apiUrl + url, data, { headers: headers });
   }
-
+  deleteData(url: String): Observable<any> {
+    return this._http.delete(this.apiUrl + url);
+  }
   postData(url: String, formData: FormData) {
     return this._http.put(`${this.apiUrl}` + url, formData);
   }

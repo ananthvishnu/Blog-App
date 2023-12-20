@@ -95,6 +95,19 @@ const loginUser = async (req, res) => {
   }
 };
 
+const getOneUser = async (req, res) => {
+  try{
+    const user = await User.findByPk(req.params.id,{
+      attributes: ['id', 'email', 'username', 'password']
+    });
+
+    return res.status(200).json(user);
+  }catch(error){
+    console.error('Error while logging in:', error);
+    return res.status(500).json({ message: 'Internal Server Error', status: 500 });
+  }
+}
+
 
 
 // Validation functions
@@ -113,5 +126,5 @@ function isValidUserName(username) {
 }
 
 module.exports = {
-  signUpUser,loginUser
+  signUpUser,loginUser,getOneUser
 };

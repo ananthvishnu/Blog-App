@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { NgToastService } from 'ng-angular-popup';
 import { HttpServiceService } from 'src/app/database/http.service.service';
 import { CreateBlogComponent } from 'src/app/models/create-blog/create-blog.component';
 
@@ -24,7 +25,9 @@ export class MainComponent implements OnInit {
 
   constructor(
     public apiService: HttpServiceService,
-    private matDialog: MatDialog
+    private matDialog: MatDialog,
+    private toaster: NgToastService
+
   ) {}
 
   createBlog(): void {
@@ -63,5 +66,28 @@ export class MainComponent implements OnInit {
         this.getAllBlogs()
       }
     });
+  }
+
+  deleteBlog(blogId:any){
+    this.apiService.deleteData(`/api/blog/delete/${blogId}`).subscribe(
+      (response: any) => {
+        this.toaster.success({
+          detail: 'SUCCESS',
+          summary: 'Blog deleted successfully',
+          duration: 5000,
+          position: 'topRight',
+        });
+      
+      },
+      (error: any) => {
+  
+        this.toaster.error({
+          detail: 'ERROR',
+          summary: 'Failed to delete blog. Please try again.',
+          sticky: true,
+          position: 'topRight',
+        });
+      }
+    );
   }
 }
