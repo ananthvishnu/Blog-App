@@ -21,6 +21,11 @@ import { CreateBlogComponent } from './models/create-blog/create-blog.component'
 import { DeleteBlogComponent } from './models/delete-blog/delete-blog.component';
 import { authInterceptor } from './interceptor/auth.interceptor';
 import { AllBlogsComponent } from './components/all-blogs/all-blogs.component';
+import { PageComponent } from './admin/page/page.component';
+import { SidebarComponent } from './admin/sidebar/sidebar.component';
+import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
+import { DashCountComponent } from './admin/dash-count/dash-count.component';
+import { SalesChartComponent } from './admin/sales-chart/sales-chart.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +40,11 @@ import { AllBlogsComponent } from './components/all-blogs/all-blogs.component';
     CreateBlogComponent,
     DeleteBlogComponent,
     AllBlogsComponent,
+    PageComponent,
+    SidebarComponent,
+    AdminNavComponent,
+    DashCountComponent,
+    SalesChartComponent,
   ],
   imports: [
     BrowserModule,

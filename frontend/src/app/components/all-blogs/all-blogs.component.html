@@ -25,13 +25,13 @@
            
         </div>
         <div class="row main-row">
-          <div class="col-lg-3 col-md-4 col-sm-6 main-col" *ngFor="let blog of blogPosts; let item of items" 
+          <div class="col-lg-3 col-md-4 col-sm-6 main-col" *ngFor="let blog of blogPosts; " 
    
           >
             <div class="card">
                 <img src="../../../assets/img/about-bg.jpg" alt="" class="img-fluid">
                 <h5 class="title">{{ blog.title }}</h5>
-                <p class="content">{{ blog.content | slice:0:40 }}{{ blog.content?.length > 40 ? '...' : '' }}</p>
+                <p class="content1">{{ blog.content | slice:0:40 }}{{ blog.content?.length > 40 ? '...' : '' }}</p>
                 <div class=" row button-div">
                   <button class="btn">Read More</button>
                 </div>

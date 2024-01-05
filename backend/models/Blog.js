@@ -13,6 +13,10 @@ Blog.init(
       type: DataTypes.TEXT,
       allowNull: true,
     },
+    author: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
   },
   {
     sequelize,
@@ -22,7 +26,7 @@ Blog.init(
 );
 
 try {
-    Blog.sync({ force: false })
+    Blog.sync({ force: true })
     .then(() => {
       console.log('Blog Table created successfully.');
     })

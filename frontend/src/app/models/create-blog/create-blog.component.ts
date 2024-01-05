@@ -76,6 +76,7 @@ export class CreateBlogComponent implements OnInit {
       const data = {
         title: this.CreateBlogForm.value.title,
         content: this.CreateBlogForm.value.content,
+        author:localStorage.getItem('username')
       };
 
       this.apiService.post('/api/blog/create', data).subscribe(
@@ -113,6 +114,7 @@ export class CreateBlogComponent implements OnInit {
       const data = {
         title: this.CreateBlogForm.value.title,
         content: this.CreateBlogForm.value.content,
+        author:localStorage.getItem('username')
       };
 
       this.apiService.putData(`/api/blog/edit/${this.blog.id}`, data).subscribe(
