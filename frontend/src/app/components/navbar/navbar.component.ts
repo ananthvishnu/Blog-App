@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpServiceService } from 'src/app/database/http.service.service';
 import { UserInterface } from 'src/app/interface/user.interface';
@@ -14,11 +14,18 @@ export class NavbarComponent implements OnInit {
   userData: any;
   userId: any;
 
+  isScrolled: boolean = false;
+
+  
+
+
   constructor(
     public authService: AuthServiceService,
     private http: HttpClient,
     private router: Router,
-    public apiService: HttpServiceService
+    public apiService: HttpServiceService,
+    private el: ElementRef,
+    private renderer: Renderer2,
   ) {}
 
   ngOnInit(): void {
@@ -46,4 +53,8 @@ export class NavbarComponent implements OnInit {
     this.authService.CurrentUserSig.set(null);
     this.router.navigateByUrl('/login');
   }
+
+
+
+
 }
