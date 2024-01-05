@@ -8,7 +8,7 @@
             <h3  class="post-subtitle">{{ blog.content }}</h3>
           </a>
           <p class="post-meta">
-            Posted by
+            Posted by : {{blog.author}}
             <!-- <a href="#!">{{ post.author }}</a> -->
             <!-- on {{ post.date }} -->
           </p>
@@ -23,7 +23,7 @@
         <hr class="my-4" />
         <!-- Pager -->
         <div class="d-flex justify-content-end mb-4">
-          <a class="btn btn-primary text-uppercase" (click)="createBlog()">Create Blog →</a>
+          <a class="btn btn-success text-uppercase" (click)="createBlog()">Create Blog →</a>
         </div>
       </div>
     </div>

@@ -96,6 +96,7 @@ export class MainComponent implements OnInit {
     if (this.authService.CurrentUserSig()) {
       this.apiService.deleteData(`/api/blog/delete/${blogId}`).subscribe(
         (response: any) => {
+          this.getAllBlogs()
           this.toaster.success({
             detail: 'SUCCESS',
             summary: 'Blog deleted successfully',

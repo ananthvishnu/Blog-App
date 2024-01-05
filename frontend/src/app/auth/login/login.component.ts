@@ -76,6 +76,7 @@ export class LoginComponent implements OnInit {
           this.submitted = false;
           localStorage.setItem('token', response.token);
           localStorage.setItem('id', response.user.id);
+          localStorage.setItem('username', response.user.username);
           this.authService.CurrentUserSig.set(response.user);
           this.router.navigateByUrl('');
         },

@@ -13,6 +13,10 @@ Blog.init(
       type: DataTypes.TEXT,
       allowNull: true,
     },
+    author: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
   },
   {
     sequelize,

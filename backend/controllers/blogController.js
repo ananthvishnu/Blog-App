@@ -3,12 +3,13 @@ const Blog = require("../models/Blog");
 // Create blog
 const createBlog = async (req, res) => {
   try {
-    const { title, content, userId } = req.body;
+    const { title, content, userId, author } = req.body;
 
     // Assuming you have a userId associated with the blog
     const blog = await Blog.create({
       title: title,
       content: content,
+      author:author,
       userId: userId,
     });
 
@@ -30,7 +31,7 @@ const editBlog = async (req, res) => {
     const { id } = req.params;
 
 
-    const { title, content } = req.body;
+    const { title, content, author } = req.body;
     const blog = await Blog.findByPk(id);
 
     if (!blog) {
@@ -39,6 +40,7 @@ const editBlog = async (req, res) => {
 
     blog.title = title || blog.title;
     blog.content = content || blog.content;
+    blog.author = author || blog.author
 
     await blog.save();
 
