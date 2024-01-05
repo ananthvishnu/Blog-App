@@ -20,6 +20,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { CreateBlogComponent } from './models/create-blog/create-blog.component';
 import { DeleteBlogComponent } from './models/delete-blog/delete-blog.component';
 import { authInterceptor } from './interceptor/auth.interceptor';
+import { AllBlogsComponent } from './components/all-blogs/all-blogs.component';
 import { PageComponent } from './admin/page/page.component';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
 import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
@@ -38,6 +39,7 @@ import { SalesChartComponent } from './admin/sales-chart/sales-chart.component';
     SignupComponent,
     CreateBlogComponent,
     DeleteBlogComponent,
+    AllBlogsComponent,
     PageComponent,
     SidebarComponent,
     AdminNavComponent,

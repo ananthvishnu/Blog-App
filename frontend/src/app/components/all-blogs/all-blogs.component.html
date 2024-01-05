@@ -1,0 +1,34 @@
+
+<section style="background-color: #d2a0a0a3; padding: 20px 0;">
+    <div class="container"  >
+
+        <div class="row heading-row">
+            <div class="heading">
+                <h3>ALL BLOGS</h3>
+                <div class="subHeading">
+                    <p>What is Lorem Ipsum? </p>
+                </div>
+              
+            </div>
+           
+        </div>
+        <div class="row main-row">
+          <div class="col-lg-3 col-md-4 col-sm-6 main-col" *ngFor="let blog of blogPosts; " 
+   
+          >
+            <div class="card">
+                <img src="../../../assets/img/about-bg.jpg" alt="" class="img-fluid">
+                <h5 class="title">{{ blog.title }}</h5>
+                <p class="content1">{{ blog.content | slice:0:40 }}{{ blog.content?.length > 40 ? '...' : '' }}</p>
+                <div class=" row button-div">
+                  <button class="btn">Read More</button>
+                </div>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+</section>
+
+
+  

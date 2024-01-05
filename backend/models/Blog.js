@@ -26,7 +26,7 @@ Blog.init(
 );
 
 try {
-    Blog.sync({ force: false })
+    Blog.sync({ force: true })
     .then(() => {
       console.log('Blog Table created successfully.');
     })
