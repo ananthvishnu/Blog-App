@@ -16,7 +16,7 @@ export class AllBlogsComponent implements OnInit {
   ngOnInit(): void {
     this.getAllBlogs();
     this.getBlogById(1);
-    console.log(this.getBlogById(this.id))
+    console.log(this.getBlogById(1))
   }
 
   items = [
