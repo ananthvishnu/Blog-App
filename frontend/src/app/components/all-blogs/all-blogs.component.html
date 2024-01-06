@@ -21,7 +21,7 @@
                 <h5 class="title">{{ blog.title }}</h5>
                 <p class="content1">{{ blog.content | slice:0:40 }}{{ blog.content?.length > 40 ? '...' : '' }}</p>
                 <div class=" row button-div">
-                  <button class="btn">Read More</button>
+                  <button class="btn" [routerLink]="['singleBlog']" (click)="getBlogById(id)">Read More</button>
                 </div>
             </div>
            

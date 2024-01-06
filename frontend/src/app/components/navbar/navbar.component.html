@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+<!-- <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
     <div class="container px-4 px-lg-5">
         <a class="navbar-brand" [routerLink]="['']"> <h1 class="text-primary fw-bold mb-0">
             Clean<span class="text-dark">Blog</span>
@@ -20,15 +20,15 @@
             </ul>
         </div>
     </div>
-</nav>
+</nav> -->
 
 
 
-<!-- <header class="top-nav" [ngClass]="{'scrolled' : isScrolled }" >
+<header class="top-nav" [ngClass]="{'scrolled' : isScrolled }" >
     <a href="" class="logo"  #logo>  <i class="fab fa-twitter" aria-hidden="true" style="color: white;"></i></a>
  
  <input type="checkbox" id="menu-bar">
- <label for="menu-bar"> Menu
+ <!-- <label for="menu-bar"> Menu -->
  
  <label class="plate plate3" for="menu-bar"   onclick="this.classList.toggle('active')">
      <svg class="burger" fill="#fff" version="1.1" height="100" width="100" viewBox="0 0 100 100">
@@ -44,30 +44,31 @@
        <path class="line" d="M 66,32 L 34,68"></path>
      </svg>
    </label>
- </label>
+ <!-- </label> -->
  <nav class="navbar" id="menu">
  
 
      <ul #menu>
          <li><a href="">Home</a></li>
          <li ><a [routerLink]="['/about']">About</a></li>
-        y
          <li ><a [routerLink]="['/deliverd']"> Oru blog</a></li>
          <li ><a [routerLink]="['/contact']">Contact Us</a></li>
          <li ><a [routerLink]="['/profile']">Profile</a></li>
 
  
          <button class="btn " >
-   <li style="margin-top: -5px; display: flex; align-items: center; justify-content: center;">
+   <li *ngIf="authService.CurrentUserSig() === null"  style="margin-top: -5px; display: flex; align-items: center; justify-content: center;" >
     
-    <a style="color: #ffffff !important;" >Login</a>
+    <a style="color: #ffffff !important;"  [routerLink]="['login']" >Login</a>
     
    </li>
+   <li *ngIf="authService.CurrentUserSig()" class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" (click)="logout()" style="cursor: pointer;">Logout</a></li>
+
 </button>
 
    
-<li> <a>Log Out</a></li>
+
  </ul>
  </nav>
  
- </header> -->
+ </header>
