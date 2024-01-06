@@ -1,5 +1,4 @@
-<app-navbar></app-navbar>
-<div class="bg-light py-3 py-md-5 py-xl-8">
+<div class="body">
   <div class="container animate__animated animate__zoomIn animate__slow">
     <div class="row justify-content-md-center">
       <div class="col-12 col-md-11 col-lg-8 col-xl-7 col-xxl-6">
@@ -9,7 +8,7 @@
               <div class="text-center mb-5">
                 <a routerLink="['/home']">
                   <!-- <img src="../../../favicon.ico" alt="" width="175" height="57"> -->
-                  <h1 class="text-primary fw-bold mb-0">
+                  <h1 class="text fw-bold mb-0">
                     Clean<span class="text-dark">Blog</span>
                   </h1>
                 </a>
@@ -221,13 +220,20 @@
 
               <div class="col-12">
                 <div class="d-grid">
+                  <div class="row btn-row">
+                    <div class="btn-row">
+                  <a href="#!" class="link-secondary text-decoration-none open"
+                  >Forgot password</a
+                >
                   <button
                     *ngIf="!isLoading"
-                    class="btn btn-primary btn-lg text-dark open"
+                    class="btn  btn-lg text-dark open"
                     type="submit"
                   >
                     Signup
                   </button>
+                </div>
+              </div>
                   <button
                     *ngIf="isLoading"
                     class="btn btn-primary btn-lg text-dark"
@@ -256,9 +262,7 @@
                   class="link-secondary text-decoration-none open"
                   >Already have account :  <span class="login-text open">Login</span> </a
                 >
-                <a href="#!" class="link-secondary text-decoration-none open"
-                  >Forgot password</a
-                >
+                
               </div>
             </div>
           </div>
@@ -267,4 +271,3 @@
     </div>
   </div>
 </div>
-<app-footer></app-footer>

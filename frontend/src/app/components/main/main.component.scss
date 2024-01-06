@@ -42,6 +42,50 @@
   a{
     text-decoration: none;
   }
+
+  .about-us-container{
+    height: 50vh;
+  }
+
+  .row1{
+    position: relative;
+
+  }
+
+  .animated-image{
+    height: auto;
+    width: 650px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.card{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+  top: 22.5px;
+  width: 700px;
+  padding: 20px;
+  box-shadow: #3e3535b0 0px 1px 13px ;
+  height: 350px;
+
+}
+
+.btn1{
+  width: 150px;
+    text-align: center;
+    height: 50px;
+    background: linear-gradient(45deg, #880707, rgba(208, 103, 24, 0.7803921569));
+    border-radius: 25px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3px;
+    border: none;
+}
+
   @media (min-width: 992px) {
     .post-preview > a > .post-title {
       font-size: 2.25rem;
