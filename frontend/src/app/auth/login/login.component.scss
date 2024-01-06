@@ -1,5 +1,24 @@
 @import "../../../styles.scss";
 
+.body{
+  background: linear-gradient(45deg, #E2C2C2, rgba(208, 103, 24, 0.7803921569));
+padding: 102.5px;
+padding-bottom: 279px;
+justify-content: center;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+}
+.rounded{
+  border-radius: 15px !important;
+}
+
+.text{
+  color: #881007;
+}
+
 a {
   text-decoration: none;
 }
@@ -46,3 +65,22 @@ a {
   font-family: "Open Sans", sans-serif !important;
 }
 
+.btn{
+  width: 104px;
+    text-align: center;
+    height: 50px;
+    background: linear-gradient(45deg, #880707, rgba(208, 103, 24, 0.7803921569));
+    border-radius: 25px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3px;
+    border: none;
+}
+
+.btn-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
