@@ -3,3 +3,4 @@
 
 export const baseUrl = "https://blog-app-7tvj.onrender.com"
 
+// export const baseUrl = "http://localhost:1337"

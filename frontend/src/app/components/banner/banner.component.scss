@@ -1,0 +1,39 @@
+.main-row{
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.container{
+    margin-top: 54px;
+}
+
+input:focus {
+    /* box-shadow: none;  */
+    outline: none !important;
+    border: none !important;
+  }
+
+  input {
+    width: 250px;
+    border-radius: 22px;
+    height: 41px;
+    
+  }
+.form-div{
+    position: relative;
+}
+  
+  .Subscribe-btn{
+    position: absolute;
+    background: linear-gradient(45deg, #880707, rgba(208, 103, 24, 0.7803921569));
+    top: 4px;
+    left: 151px;
+    width: 95px;
+    height: 33px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffff;
+    border: none;
+  }

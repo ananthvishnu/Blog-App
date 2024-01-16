@@ -27,6 +27,7 @@ import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
 import { DashCountComponent } from './admin/dash-count/dash-count.component';
 import { SalesChartComponent } from './admin/sales-chart/sales-chart.component';
 import { SingleBlogComponent } from './components/single-blog/single-blog.component';
+import { BannerComponent } from './components/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { SingleBlogComponent } from './components/single-blog/single-blog.compon
     DashCountComponent,
     SalesChartComponent,
     SingleBlogComponent,
+    BannerComponent,
   ],
   imports: [
     BrowserModule,
