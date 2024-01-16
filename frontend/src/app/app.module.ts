@@ -26,6 +26,8 @@ import { SidebarComponent } from './admin/sidebar/sidebar.component';
 import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
 import { DashCountComponent } from './admin/dash-count/dash-count.component';
 import { SalesChartComponent } from './admin/sales-chart/sales-chart.component';
+import { SingleBlogComponent } from './components/single-blog/single-blog.component';
+import { BannerComponent } from './components/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { SalesChartComponent } from './admin/sales-chart/sales-chart.component';
     AdminNavComponent,
     DashCountComponent,
     SalesChartComponent,
+    SingleBlogComponent,
+    BannerComponent,
   ],
   imports: [
     BrowserModule,
